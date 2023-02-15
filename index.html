@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and morty characters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./img/gun.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="readMoreBackground">
+            <div class="readMoreContainer">
+                <img class="close" src="./img/cross.png" alt="close">
+                <div class="characterImage"></div>
+                <span class="characterName">Rick Sanchez</span>
+                <span class="readMoreGender readMoreInfo">Gender: <span id="readMoreGender">mail</span></span>
+                <span class="readMoreStatus readMoreInfo">Status: <span id="readMoreStatus">alive</span></span>
+                <span class="readMoreSpecies readMoreInfo">Species: <span id="readMoreSpecies">human</span></span>
+                <span class="readMoreOrigin readMoreInfo">Origin: <span id="readMoreOrigin">earth</span></span>
+            </div>
+        </div>
+        <div class="homePage">
+            <div class="moonContainer">
+                <div class="backgroundMoon"></div>
+            </div>
+            <div class="container">
+                <nav>
+                    <span class="navbarIteam navbarIteam__active">Home</span>
+                    <span class="navbarIteam">Characters</span>
+                    <div class="logo">
+                        <img src="./img/logo.png" alt="Rick and morty">
+                    </div>
+                    <span class="navbarIteam">Locations</span>
+                    <span class="navbarIteam">My watch list</span>
+                </nav>
+                <main>
+                    <div class="mainLeft">
+                        <h2>Rick & <br> Morty API</h2>
+                        <span>Find your favourite Rick & Morty characters</span>
+                        <div class="inputContainer">
+                            <img id="glass" src="./img/glass.png" alt="search">
+                            <input placeholder="Search..." class="searchInp" type="text">
+                        </div>
+                        <div class="imgContainer">
+                            <img src="./img/gun.png" alt="gun">
+                        </div>
+                    </div>
+                    <div class="mainRight">
+                        <img src="./img/rickAndMorty.png" alt="rick&Morty">
+                        <div id="c1" class="characterCard characterCardNameSearch">
+                            <div class="image"></div>
+                            <span class="name info">Name: <span id="name">Rick Sanchez</span></span>
+                            <span class="gender info">Gender: <span id="gender">Male</span></span>
+                            <span class="status info">Status: <span id="status">Alive</span></span>
+                            <button class="characterCardNameSearch__readMore">Read more</button>
+                        </div>
+                    </div>
+                </main>
+                <div class="charactersPage">
+                    <div class="filterField">
+                        <span>Sort by</span>
+                        <div class="speciesSortContainer filterContainer">
+                            <span>species:</span>
+                            <select class="filterSelect" id="speciesSelect">
+                                <option value="all">All</option>
+                            </select>
+                        </div>
+                        <div class="statusSortContainer filterContainer">
+                            <span>status:</span>
+                            <select class="filterSelect" id="statusSelect">
+                                <option value="all">All</option>
+                                <option value="Alive">Alive</option>
+                                <option value="unknown">unknown</option>
+                                <option value="Dead">Dead</option>
+                            </select>
+                        </div>
+                        <div class="genderSortContainer filterContainer">
+                            <span>gender:</span>
+                            <select class="filterSelect" id="genderSelect">
+                                <option value="all">All</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="unknown">unknown</option>
+                                <option value="Genderless">Genderless</option>
+                            </select>
+                        </div>
+                        <button id="showAll">Show all</button>
+                    </div>
+                    <div class="cardsContainer"></div>
+                    <div class="switchPages">
+                        <div class="mainButtonsContainer">
+                            <button class="prewBtn disabled swichBtn">
+                                <img src="./img/ArrowBlack.png" alt="arrow">
+                                <span>Previous page</span>
+                            </button>
+                            <button class="nextBtn swichBtn">
+                                <span>Next page</span>
+                                <img src="./img/ArrowWhite.png" alt="arrow">
+                            </button>
+                        </div>
+                        <div class="fastSwitchContainer">
+                            <input min="1" max="42" id="switchInp" value="1" type="number">
+                            <div class="pageCount">of <span id="pageCount">42</span></div>
+                            <button class="prewBtn secPrewBtn secSwitchBtn"><img src="./img/arrowLeft.png" alt="<"></button>
+                            <button class="nextBtn secNextBtn secSwitchBtn"><img src="./img/arrowRight.png" alt=">"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="myWatchListPage">
+                    <div class="myWatchListPageAddEpisodeCotainer">
+                        <div class="myWatchListPageAddEpisodeField">
+                            <div class="myWatchListPageInputContainer">
+                                <input id="episodeInp" type="text" placeholder="Enter episode name...">
+                            </div>
+                            <button id="addBtn">Add</button>
+                        </div>
+                        <div class="hintConatiner">
+                            <span class="hint" id="hint1"></span>
+                            <span class="hint" id="hint2"></span>
+                            <span class="hint" id="hint3"></span>
+                        </div>
+                    </div>
+                    <div class="savedEpisodesContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

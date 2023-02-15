@@ -1,0 +1,473 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+.wrap{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #e0e0e0;
+}
+.homePage{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.backgroundMoon{
+    width: 500px;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(./img/moon.png);
+    opacity: .1;
+    transform: rotate(270deg);
+}
+.moonContainer{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 1;
+}
+.container{
+    width: 1200px;
+    height: 100%;
+    z-index: 2;
+}
+nav{
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .navbarIteam{
+    font-size: 1.1em;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+nav .navbarIteam__active{
+    background-color: #333;
+    color: white;
+}
+.logo img{
+    height: 60px;
+}
+main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+}
+.imgContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+}
+.imgContainer img{
+    width: 200px;
+    margin-right: 80px;
+}
+.mainLeft h2{
+    font-size: 3.5em;
+    color: #5f625f;
+}
+.mainLeft span{
+    font-size: 1.3em;
+    color: #5f625f;
+    width: 400px;
+    display: block;
+    margin-left: 30px;
+    margin-top: 25px;
+}
+.mainLeft span::before{
+    content: "";
+    display: block;
+    width: 6px;
+    height: 48px;
+    background-color: #5f625f;
+    position: absolute;
+    margin-left: -25px;
+}
+.searchInp{
+    width: 400px;
+    height: 38px;
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid #888888;
+    margin-top: 25px;
+    padding-left: 45px;
+    font-size: 1.2em;
+    color: #5f625f;
+}
+.inputContainer img{
+    width: 28px;
+    position: absolute;
+    margin-left: 14px;
+    margin-top: 32px;
+    cursor: pointer;
+}
+.mainRight img{
+    width: 500px;
+}
+.characterCard{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 150px;
+    background-color: rgba(255, 255, 255, 0.578);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.281);
+    border-radius: 10px;
+    padding: 30px 40px;
+    font-size: 1.2em;
+    width: 330px;
+}
+.characterCard .image{
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(https://rickandmortyapi.com/api/character/avatar/1.jpeg);
+    border-radius: 50%;
+}
+.characterCard > span:nth-child(2){
+    margin-top: 20px;
+    text-align: center;
+}
+.characterCard > span{
+    margin-top: 10px;
+    font-weight: 700;
+}
+.characterCard > span span{
+    font-weight: 500;
+}
+.readMore, .characterCardNameSearch__readMore{
+    width: 180px;
+    height: 40px;
+    border: none;
+    background-color: #333;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.readMoreBackground{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    z-index: 3;
+}
+.readMoreContainer{
+    width: 450px;
+    height: 600px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 25px;
+}
+.readMoreContainer img:first-child{
+    width: 35px;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 413px;
+}
+.characterImage{
+    width: 100%;
+    height: 240px;
+    margin-top: 40px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(https://rickandmortyapi.com/api/character/avatar/2.jpeg);
+}
+.characterName{
+    font-size: 1.6em;
+    margin: 30px 0;
+    font-weight: 700;
+}
+.description{
+    width: 100%;
+    font-size: 1.1em;
+}
+.charactersPage{
+    width: 100%;
+    display: block;
+}
+.cardsContainer{
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 100px;
+    display: flex;
+}
+.mainButtonsContainer{
+    display: flex;
+}
+.switchPages{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 35px;
+    margin: 50px 0;
+}
+.swichBtn{
+    margin: 0 5px;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    height: 48px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.1s;
+}
+.swichBtn img{
+    height: 15px;
+}
+.swichBtn span{
+    font-size: 1.3em;
+    min-width: 130px;
+    font-weight: 700;
+    margin: 0 10px;
+}
+.nextBtn{
+    border: none;
+    background-color: #2bc48a;
+}
+.nextBtn:hover{
+    background-color: #1db47a;
+}
+.nextBtn span{
+    min-width: 100px;
+    color: white;
+}
+.prewBtn{
+    border: 2px solid #555;
+}
+.prewBtn:hover{
+    background-color: rgb(233, 233, 233);
+}
+.fastSwitchContainer{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 150px;
+}
+.fastSwitchContainer input{
+    height: 33px;
+    width: 50px;
+    outline: none;
+    border: 1px solid #555;
+    padding-left: 8px;
+    font-size: 1.2em;
+    border-radius: 3px;
+}
+.pageCount{
+    margin: 0 10px;
+    font-size: 1.2em;
+}
+.secSwitchBtn{
+    height: 33px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #e3e9ed;
+    cursor: pointer;
+}
+.secSwitchBtn img{
+    height: 15px;
+}
+.charactersPage__characterCard{
+    display: flex;
+    margin: 35px;
+}
+.filterField{
+    width: 100%;
+    height: 50px;
+    background-color: #3b3b3b;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+.filterField > span{
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.filterField div span{
+    font-size: 1.1em;
+}
+.filterContainer select{
+    margin-left: 5px;
+    font-size: 1em;
+    height: 30px;
+    border: none;
+    color: white;
+    background-color: #3b3b3b;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.4px;
+}
+#showAll{
+    height: 35px;
+    padding: 0 20px;
+    font-size: 1em;
+    color: white;
+    border-radius: 8px;
+    background-color: #222222;
+    border: none;
+    cursor: pointer;
+}
+.readMoreInfo{
+    font-weight: 700;
+    font-size: 1.3em;
+    margin: 5px 0;
+    text-align: center;
+}
+.readMoreInfo > span{
+    font-weight: 500;
+    margin-left: 5px;
+}
+.myWatchListPage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+.myWatchListPageInputContainer input{
+    width: 500px;
+    height: 45px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    outline: none;
+    font-size: 1.2em;
+    background-color: rgba(255, 255, 255, 0.60);
+    padding-left: 25px;
+    border: none;
+    color: #333;
+}
+.myWatchListPageInputContainer input::placeholder{
+    color: #333;
+}
+.myWatchListPageAddEpisodeField{
+    display: flex;
+}
+.myWatchListPageAddEpisodeField button{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 150px;
+    cursor: pointer;
+    background-color: rgba(231, 231, 231, 0.60);
+    border: none;
+    font-size: 1.2em;
+    
+}
+.myWatchListPageAddEpisodeCotainer{
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    background-color: white;
+    position: absolute;
+}
+.hintConatiner{
+    padding: 20px 0 25px 0;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    z-index: 5;
+    position: relative;
+    border-radius: 20px;
+}
+.hintConatiner span{
+    width: 100%;
+    padding: 10px 0;
+    cursor: pointer;
+    padding-left: 25px;
+}
+.hintConatiner span:hover{
+    background-color: rgba(238, 238, 238, 0.6);
+}
+.savedEpisodesContainer{
+    width: 650px;
+    height: 100px;
+    margin-top: 100px;
+}
+.savedEpisodesIteam{
+    width: 100%;
+    height: 70px;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    margin: 20px 0;
+    transition: 0.3s;
+}
+.doneCheckBox{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid #555;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.doneCheckBox img{
+    width: 18px;
+    margin-left: 1px;
+}
+.delite img{
+    width: 15px;
+    cursor: pointer;
+}
+.text{
+    margin-left: 20px;
+}
+.doneCheckBox img{
+    display: none;
+}
+.savedEpisodesIteamBox{
+    display: flex;
+    align-items: center;
+}
+.checked img{
+    display: flex;
+}
+.done{
+    opacity: 0.4;
+}
+.done .CheckedImg{
+    display: flex;
+}
+.charactersPage{
+    display: none;
+}
+.myWatchListPage{
+    display: none;
+}
